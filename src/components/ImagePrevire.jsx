@@ -1,53 +1,47 @@
-import React from "react";
 import Loading from "./loading";
 
-const ImagePrevire = (Props) => {
-  console.log(Props);
-
+const ImagePreview = ({ uploaded, enhanced, loading }) => {
   return (
-    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl ">
+    <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-5xl mx-auto">
       {/* Original Image */}
-      <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-        <h2 className="text-xl font-semibold text-center bg-gray-800 text-white py-2 ">
+      <div className="bg-white shadow-xl rounded-2xl overflow-hidden transform transition-all hover:scale-105">
+        <h2 className="text-xl font-semibold text-center bg-gradient-to-r from-gray-800 to-gray-900 text-white py-3">
           Original Image
         </h2>
-        {Props.uploaded ? (
-              <img
-              src={Props.uploaded}
-              alt=""
-              className="w-full max-h-[50vh] h-full object-cover"
-            />
-        ): (
-            <div className="flex items-center justify-center h-80 bg-gray-200">
-          No Image Selected
-        </div>
+        {uploaded ? (
+          <img
+            src={uploaded}
+            alt="Original"
+            className="w-full h-96 object-contain bg-gray-100"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-96 bg-gray-100 text-gray-500">
+            Upload an image to begin
+          </div>
         )}
-        
       </div>
 
       {/* Enhanced Image */}
-      <div className="bg-white shadow-lg rounded-xl overflow-hidden">
-        <h2 className="text-xl font-semibold text-center bg-blue-800 text-white py-2 ">
+      <div className="bg-white shadow-xl rounded-2xl overflow-hidden transform transition-all hover:scale-105">
+        <h2 className="text-xl font-semibold text-center bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3">
           Enhanced Image
         </h2>
-
-        {Props.enhanced && !Props.loading && (
-            <img
-                src={Props.enhanced}
-                alt=""
-                className="w-full max-h-[50vh] h-full object-cover"
-            />
-            )}
-            {Props.loading && <Loading/> ? (
-               <loading/>  
-            ):(
-                <div className="flex items-center justify-center h-80 bg-gray-200">
-                No Enhanced Image
-              </div>
-            )}
+        {loading ? (
+          <Loading />
+        ) : enhanced ? (
+          <img
+            src={enhanced}
+            alt="Enhanced"
+            className="w-full h-96 object-contain bg-gray-100 animate-fade-in"
+          />
+        ) : (
+          <div className="flex items-center justify-center h-96 bg-gray-100 text-gray-500">
+            Enhanced image will appear here
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default ImagePrevire;
+export default ImagePreview;

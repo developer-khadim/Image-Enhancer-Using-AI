@@ -5,14 +5,14 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <>
-     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-6 px-4 " >
-        <Header/>
-        <Home/>
-        <Footer/>
-     </div>
-    </>
-  )
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col items-center py-8 px-4">
+      <div className="w-full max-w-6xl">
+        <Header />
+        <Home />
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
 export default App

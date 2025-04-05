@@ -2,16 +2,14 @@ import React from "react";
 
 const Header = () => {
   return (
-    <>
-      <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold text-gray-800 mb-2">
+    <header className="text-center mb-12 animate-fade-in">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
         AI Image Enhancer
-        </h1>
-        <p className="mt-2 text-lg  text-gray-600">
-          Upload your image and let Ai enhance it for you in seconds!
-        </p>
-      </div>
-    </>
+      </h1>
+      <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Transform your images with cutting-edge AI technology in just seconds!
+      </p>
+    </header>
   );
 };
 
