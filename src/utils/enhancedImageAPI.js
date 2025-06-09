@@ -1,7 +1,8 @@
 
 import axios from "axios";
 
-const API_KEY = "wx8inujuavlbr7ns6"; // Replace with your actual API key
+const API_KEY = "wx36k377wfb4al0me"; //  PicWash  Replace with your actual API key
+// Note: Ensure to keep your API key secure and not expose it in public repositories.
 const BASE_URL = "https://techhk.aoscdn.com/";
 const MAXIMUM_RETRIES = 20;
 
